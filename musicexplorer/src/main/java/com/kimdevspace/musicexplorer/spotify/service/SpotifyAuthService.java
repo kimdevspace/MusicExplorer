@@ -51,7 +51,7 @@ public class SpotifyAuthService {
         }
     }
 
-    @Scheduled(fixedRate = 1800000)
+    @Scheduled(fixedRate = 1800000) // 30분마다 토큰 상태 확인
     public void checkAndRefreshToken() {
         if (isTokenExpiringSoon()) {
             log.info("Spotify token is expiring soon. Refreshing...");
@@ -74,5 +74,4 @@ public class SpotifyAuthService {
                 tokenExpirationTime != null &&
                 Instant.now().isBefore(tokenExpirationTime);
     }
-
 }
