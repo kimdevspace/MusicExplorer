@@ -25,6 +25,9 @@ spotify:
   client:
     id: ${SPOTIFY_CLIENT_ID}
     secret: ${SPOTIFY_CLIENT_SECRET}
+  auth:
+    token-url: https://accounts.spotify.com/api/token
+    token-renewal-threshold-ms: 600000  # 10분 (만료 10분 전에 갱신)
 
 springdoc:
   api-docs:
